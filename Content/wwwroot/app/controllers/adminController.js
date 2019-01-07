@@ -5,7 +5,7 @@
         $scope.GetInput = function () {
             //$scope.register ตัวนี้ส่งไปให้ serv js ไง
             adminService.AD_Checker_Reg($scope.register).then(function (response) {
-                $scope.chekerinfo = response;
+                $scope.chekerinfo = response.data;
             })
         }
 
