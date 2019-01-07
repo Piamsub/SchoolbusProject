@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "รอบเช้า";
+    Layout = "~/Views/Shared/_LayoutChecker.cshtml";
+}
+
+<head>
+    <link href="~/wwwroot/css/Check.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container-table">
+        <h1>รอบเช้า</h1>
+        <br />
+        <table class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>ชื่อ</th>
+                    <th>สถานะ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                       <img src="~/wwwroot/img/brand/Home.jpg" class="check-img"/>
+                    </td>
+                    <td>สหรัฐ สุดเจริญ <br />(มิกกี้)</td>
+                    <td>
+                        <div class="column5">
+                            <button type="button" class="btn btn-success btn-check">รับแล้ว</button>
+                        </div>
+                        <div class="column5">
+                            <button type="button" class="btn btn-danger btn-check">ไม่ได้รับ</button>
+                        </div>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="~/wwwroot/img/brand/Home.jpg" class="check-img" /></td>
+                    <td>ศิราณี ลุนพุฒ <br />(ต้า)</td>
+                    <td>
+                        <div class="column5">
+                            <button type="button" class="btn btn-success btn-check">รับแล้ว</button>
+                        </div>
+                        <div class="column5">
+                            <button type="button" class="btn btn-danger btn-check">ไม่ได้รับ</button>
+                        </div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div> 
+</body>
+
+

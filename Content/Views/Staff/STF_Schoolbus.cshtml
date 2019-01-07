@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "รถโรงเรียน";
+    Layout = "~/Views/Shared/_LayoutStaff.cshtml";
+}
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="~/wwwroot/css/List.css" />
+</head>
+<body>
+    <div class="container-List">
+        <h2>เส้นทางการเดินรถของรถโรงเรียน</h2>
+        <div class="search">
+            <button type="button" class="btn btn-danger btn-list">เพิ่ม</button>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>เส้นทางการเดินรถ</th>
+                    <th>ทะเบียบรถ</th>
+                    <th>จำนวน รอบเช้า(15)</th>
+                    <th>จำนวน รอบเย็น(15)</th>
+                    <th>ดู</th>
+                    <th>ล</th>
+                    <th>ลบ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>คลอง 1-4</td>
+                    <td>ษล2221</td>
+                    <td>10</td>
+                    <td>10</td>
+                    <td><a href="#"><i class="material-icons">person</i></a></td>
+                    <td><a href="#"><i class="material-icons">edit</i></a></td>
+                    <td><a href="#"><i class="material-icons">delete</i></a></td>
+                </tr>
+                <tr>
+                    <td>คลอง 4-6</td>
+                    <td>ลย5231</td>
+                    <td>14</td>
+                    <td>12</td>
+                    <td><a href="#"><i class="material-icons">person</i></a></td>
+                    <td><a href="#"><i class="material-icons">edit</i></a></td>
+                    <td><a href="#"><i class="material-icons">delete</i></a></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</body>
+
+
+

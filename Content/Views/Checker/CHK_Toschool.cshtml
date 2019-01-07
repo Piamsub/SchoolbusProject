@@ -1,0 +1,51 @@
+﻿
+@{
+      ViewBag.Title = "ถึงโรงเรียน";
+      Layout = "~/Views/Shared/_LayoutChecker.cshtml";
+}
+
+<head>
+    <link href="~/wwwroot/css/Check.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container-table">
+        <h1>ถึงโรงเรียน</h1>
+        <br />
+        <table class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>ชื่อ</th>
+                    <th>สถานะ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <img src="~/wwwroot/img/brand/Home.jpg" class="check-img" />
+                    </td>
+                    <td>สหรัฐ สุดเจริญ <br />(มิกกี้)</td>
+                    <td>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="~/wwwroot/img/brand/Home.jpg" class="check-img" /></td>
+                    <td>ศิราณี ลุนพุฒ <br />(ต้า)</td>
+                    <td>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</body>
+
+

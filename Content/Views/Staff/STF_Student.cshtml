@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "นักเรียน";
+    Layout = "~/Views/Shared/_LayoutStaff.cshtml";
+}
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="~/wwwroot/css/List.css" />
+</head>
+<body>
+    <div class="container-List">
+        <h2>นักเรียน</h2>
+        <div class="search">
+            <select id="search" name="search" class="select-search">
+                <option value="name">ชื่อ-สกุล</option>
+                <option value="schoolbus">รถโรงเรียน</option>
+            </select>
+            <input type="text" id="search-text" name="search-text" class="form-search" />
+            <button type="button" class="btn btn-dark btn-list">ค้นหา</button>
+            <button type="button" class="btn btn-danger btn-list">เพิ่ม</button>
+        </div>
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ชื่อ</th>
+                    <th>นามสกุล</th>
+                    <th>รถคันที่</th>
+                    <th>แก้ไข</th>
+                    <th>ลบ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>สหรัฐ</td>
+                    <td>สุดเจริญ</td>
+                    <td>1</td>
+                    <td><a href="#"><i class="material-icons">edit</i></a></td>
+                    <td><a href="#"><i class="material-icons">delete</i></a></td>
+                </tr>
+                <tr>
+                    <td>นวพรรษ</td>
+                    <td>สุดเจริญ</td>
+                    <td>1</td>
+                    <td><a href="#"><i class="material-icons">edit</i></a></td>
+                    <td><a href="#"><i class="material-icons">delete</i></a></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</body>
+
+
+

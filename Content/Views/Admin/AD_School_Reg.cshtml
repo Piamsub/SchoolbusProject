@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "เพิ่มโรงเรียน";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<head>
+    <link rel="stylesheet" href="~/wwwroot/css/Register.css" />
+</head>
+<body>
+    <h1>เพิ่มโรงเรียน</h1>
+
+    <div class="container-reg">
+        <div class="row">
+            <div class="column">
+                <h3>ข้อมูลโรงเรียน</h3>
+                
+                
+                
+            </div>
+            <div class="column">
+                <label for="id">รหัสสถานศึกษา</label>
+                <input type="text" class="form-control" name="school_id" id="school_id" />
+                <label for="id">ชื่อโรงเรียน</label>
+                <input type="text" class="form-control" name="school_name" id="school_name" />
+                <label for="address">เลขที่</label>
+                <input type="text" class="form-control" name="address" id="address" />
+                <label for="subdistrict">ตำบล/แขวง</label>
+                <input type="text" class="form-control" name="subdistrict" id="subdistrict" />
+
+                
+
+            </div>
+            <div class="column">
+
+                <label for="district">อำเภอ/เขต</label>
+                <input type="text" class="form-control" name="district" id="district" />
+                <label for="province">จังหวัด</label>
+                <input type="text" class="form-control" name="province" id="province" />
+                <label for="zipcode">รหัสไปรษณีย์</label>
+                <input type="text" class="form-control" name="zipcode" id="zipcode" />
+                <label for="phone">เบอร์</label>
+                <input type="text" class="form-control" name="phone" id="phone" />
+            </div>
+            <div class="column">
+                <label for="location">พิกัดบ้าน</label>
+                <input type="text" class="form-control" name="location" id="location" />
+                <label for="email">อีเมล</label>
+                <input type="email" class="form-control" name="email" id="email" />
+                <label for="email">เว็บไซต์</label>
+                <input type="text" class="form-control" name="website" id="website" />
+                <button type="button" class="btn btn-success btn-block" onclick="Login">ยืนยัน</button>
+
+            </div>
+        </div>
+    </div>
+    
+</body>
+

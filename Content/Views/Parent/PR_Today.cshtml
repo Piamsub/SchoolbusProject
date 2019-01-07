@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "การรับส่งวันนี้";
+    Layout = "~/Views/Shared/_LayoutParent.cshtml";
+}
+
+<head>
+    <link rel="stylesheet" href="~/wwwroot/css/Check.css" />
+</head>
+
+<body>
+    <div class="container-table">
+        <h1>การรับส่งวันนี้</h1>
+        <br />
+        <table class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>ชื่อ</th>
+                    <th>รอบเช้า</th>
+                    <th>รอบเย็น</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <img src="~/wwwroot/img/brand/Home.jpg" class="check-img" />
+                    </td>
+                    <td>
+                        <a>สหรัฐ สุดเจริญ <br />(มิกกี้)</a>
+                    </td>
+                    <td>
+                        <div class="column5">
+                            <button type="button" class="btn btn-success btn-show">รับแล้ว</button>
+                            <a>XX.XX</a>
+                        </div>
+                        <div class="column5">
+                            <button type="button" class="btn btn-success btn-show">ถึงโรงเรียน</button>
+                            <a>XX.XX</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="column5">
+                            <button type="button" class="btn btn-success btn-show">รับแล้ว</button>
+                            <a>XX.XX</a>
+                        </div>
+                        <div class="column5">
+                            <button type="button" class="btn btn-success btn-show">ถึงบ้าน</button>
+                            <a>XX.XX</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="~/wwwroot/img/brand/Home.jpg" class="check-img" /></td>
+                    <td><a>นวพรรษ สุดเจริญ <br />(บิว)</a></td>
+                    <td>
+                        <div class="column5">
+                            <button type="button" class="btn btn-danger btn-show">ไม่ได้รับ</button>
+                        </div>
+                        @*<div class="column5">
+                            <button type="button" class="btn btn-danger btn-show">ไม่ได้รับ</button>
+                        </div>*@
+                    </td>
+                    <td>
+                        <div class="column5">
+                            <button type="button" class="btn btn-danger btn-show">ไม่ได้รับ</button>
+                        </div>
+                        @*<div class="column5">
+                            <button type="button" class="btn btn-success btn-check">รับแล้ว</button>
+                        </div>*@
+
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+

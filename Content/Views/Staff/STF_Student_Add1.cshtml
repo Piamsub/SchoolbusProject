@@ -1,0 +1,153 @@
+﻿@{
+    ViewBag.Title = "เพิ่มนักเรียน";
+    Layout = "~/Views/Shared/_LayoutStaff.cshtml";
+}
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="~/wwwroot/css/Register.css" />
+</head>
+
+<body>
+    <h1>เพิ่มนักเรียน</h1>
+
+    <div class="container-reg-student">
+        <div class="row">
+            <div class="column-part">
+                <h3>นักเรียนที่ใช้บริการ</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ชื่อ</th>
+                            <th>นามสกุล</th>
+                            <th>แก้ไข</th>
+                            <th>ลบ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>สหรัฐ</td>
+                            <td>สุดเจริญ</td>
+                            <td><a href="#"><i class="material-icons">edit</i></a></td>
+                            <td><a href="#"><i class="material-icons">delete</i></a></td>
+                        </tr>
+                        <tr>
+                            <td>นวพรรษ</td>
+                            <td>สุดเจริญ</td>
+                            <td><a href="#"><i class="material-icons">edit</i></a></td>
+                            <td><a href="#"><i class="material-icons">delete</i></a></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="column-part2">
+
+                <div class="column-student">
+                    <h3>ข้อมูลนักเรียน</h3>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                                <span class="btn btn-default btn-file">
+                                    Browse… <input type="file" id="imgInp">
+                                </span>
+                            </span>
+                            <input type="text" class="form-control" readonly>
+                        </div>
+                        <img id='img-upload' />
+                    </div>
+
+                    <label for="school_id">รหัสประจำตัวนักเรียน</label>
+
+                    <input type="text" class="form-control" name="school_id" id="school_id" />
+
+                    <button type="button" class="btn btn-dark btn-block" onclick="Login">ค้นหา</button>
+
+
+                </div>
+
+                <div class="column-student">
+
+                    <label for="prefix">คำนำหน้า</label>
+                    <select id="prefix" name="prefix" class="select-reg">
+                        <option value="boy">เด็กชาย</option>
+                        <option value="girl">เด็กสาว</option>
+                        <option value="mr">นาย</option>
+                        <option value="miss">นางสาว</option>
+                    </select>
+
+                    <label for="firstname">ชื่อ</label>
+                    <input type="text" class="form-control" name="firstname" id="firstname" />
+
+                    <label for="lastname">นามสกุล</label>
+                    <input type="text" class="form-control" name="lastname" id="lastname" />
+
+                    <label for="sex">เพศ</label>
+                    <select id="sex" name="sex" class="select-reg">
+                        <option value="man">ชาย</option>
+                        <option value="woman">หญิง</option>
+                    </select>
+
+                    <label for="birthday">วันเกิด</label>
+                    <input type="date" class="form-control" name="birthday" id="birthday" />
+
+                    <label for="phone">เบอร์</label>
+                    <input type="text" class="form-control" name="phone" id="phone" />
+
+                    <label for="relation">ความสัมพันธ์</label>
+                    <select id="relation" name="relation" class="select-reg">
+                        <option value="father">พ่อ</option>
+                        <option value="mother">แม่</option>
+                        <option value="granfa">ตา</option>
+                        <option value="granma">ยาย</option>
+                        <option value="uncle">ลุง</option>
+                        <option value="aunt">ป้า</option>
+                        <option value="aunt">อื่นๆ</option>
+                    </select>
+
+                    <button type="button" class="btn btn-success btn-block" onclick="Login">ยืนยัน</button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $(document).on('change', '.btn-file :file', function () {
+                var input = $(this),
+                    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+                input.trigger('fileselect', [label]);
+            });
+
+            $('.btn-file :file').on('fileselect', function (event, label) {
+
+                var input = $(this).parents('.input-group').find(':text'),
+                    log = label;
+
+                if (input.length) {
+                    input.val(log);
+                } else {
+                    if (log) alert(log);
+                }
+
+            });
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('#img-upload').attr('src', e.target.result);
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+            $("#imgInp").change(function () {
+                readURL(this);
+            });
+        });
+    </script>
+</body>
+
+

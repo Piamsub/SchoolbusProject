@@ -1,0 +1,163 @@
+﻿@{
+
+    ViewBag.Title = "เพิ่มพนักงานขับรถ";
+    Layout = "~/Views/Shared/_LayoutStaff.cshtml";
+}
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="~/wwwroot/css/Register.css" />
+</head>
+
+<body>
+    <h1>เพิ่มพนักงานขับรถ</h1>
+
+    <div class="container-reg-student">
+        <div class="row">
+            <div class="column-part" style="border: 2px solid #343a40; border-radius: 10px;">
+                <h3>ข้อมูลรถ</h3>
+                <div class="column-car">
+                    <label for="licenseplate">ทะเบียนรถ</label>
+                    <input type="text" class="form-control" name="licenseplate" id="licenseplate" />
+                </div>
+                <div class="column-car">
+                    <label for="drv_license">เลขที่ใบอนุญาตขับขี่</label>
+                    <input type="text" class="form-control" name="drv_license" id="drv_license" />
+                </div>
+                <div class="column-car">
+                    <label for="start_drv">วันอนุญาตขับขี่</label>
+                    <input type="date" class="form-control" name="start_drv" id="start_drv" />
+                </div>
+                <div class="column-car">
+                    <label for="exp_drv">วันหมดอายุ</label>
+                    <input type="date" class="form-control" name="exp_drv" id="exp_drv" />
+                </div>
+
+                <label for="vehicleact">วันหมดอายุ พ.ร.บ. รถยนต์</label>
+                <input type="date" class="form-control" name="vehicleact" id="vehicleact" />
+
+                <label for="start_promise">วันอนุญาตให้รับส่งนักเรียน</label>
+                <input type="date" class="form-control" name="start_promise" id="start_promise" />
+
+                <label for="exp_promise">วันสิ้นสุดการอนุญาตรับส่งนักเรียน</label>
+                <input type="date" class="form-control" name="exp_promise" id="exp_promise" />
+
+                <label for="seat">จำนวนที่นั่ง</label>
+                <input type="text" class="form-control" name="seat" id="seat" />
+            </div>
+
+            <div class="column-part2">
+                <div class="column-driver">
+
+                    <h3>ข้อมูลพนักงานขับรถ</h3>
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                                <span class="btn btn-default btn-file">
+                                    Browse… <input type="file" id="imgInp">
+                                </span>
+                            </span>
+                            <input type="text" class="form-control" readonly>
+                        </div>
+                        <img id='img-upload' />
+                    </div>
+
+                    <label for="school_id">เลขบัตรประชาชน</label>
+                    <input type="text" class="form-control" name="school_id" id="school_id" />
+
+                    <button type="button" class="btn btn-dark btn-block" onclick="Login">ค้นหา</button>
+
+
+                </div>
+
+                <div class="column-driver">
+
+                    <label for="prefix">คำนำหน้า</label>
+                    <select id="prefix" name="prefix" class="select-reg">
+                        <option value="mr">นาย</option>
+                        <option value="mrs">นาง</option>
+                        <option value="miss">นางสาว</option>
+                    </select>
+
+                    <label for="firstname">ชื่อ</label>
+                    <input type="text" class="form-control" name="firstname" id="firstname" />
+
+                    <label for="lastname">นามสกุล</label>
+                    <input type="text" class="form-control" name="lastname" id="lastname" />
+
+                    <label for="phone">เบอร์</label>
+                    <input type="text" class="form-control" name="phone" id="phone" />
+
+                    <label for="phone2">เบอร์2</label>
+                    <input type="text" class="form-control" name="phone2" id="phone2" />
+
+                    <label for="address">บ้านเลขที่</label>
+                    <input type="text" class="form-control" name="address" id="address" />
+
+                </div>
+
+                <div class="column-driver">
+
+                    <label for="subdistrict">ตำบล/แขวง</label>
+                    <input type="text" class="form-control" name="subdistrict" id="subdistrict" />
+
+                    <label for="district">อำเภอ/เขต</label>
+                    <input type="text" class="form-control" name="district" id="district" />
+
+                    <label for="province">จังหวัด</label>
+                    <input type="text" class="form-control" name="province" id="province" />
+
+                    <label for="zipcode">รหัสไปรษณีย์</label>
+                    <input type="text" class="form-control" name="zipcode" id="zipcode" />
+
+                    <label for="email">อีเมล</label>
+                    <input type="text" class="form-control" name="email" id="email" />
+
+                    <button type="button" class="btn btn-success btn-block" onclick="Login">ยืนยัน</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $(document).on('change', '.btn-file :file', function () {
+                var input = $(this),
+                    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+                input.trigger('fileselect', [label]);
+            });
+
+            $('.btn-file :file').on('fileselect', function (event, label) {
+
+                var input = $(this).parents('.input-group').find(':text'),
+                    log = label;
+
+                if (input.length) {
+                    input.val(log);
+                } else {
+                    if (log) alert(log);
+                }
+
+            });
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('#img-upload').attr('src', e.target.result);
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+            $("#imgInp").change(function () {
+                readURL(this);
+            });
+        });
+    </script>
+
+</body>
+
+

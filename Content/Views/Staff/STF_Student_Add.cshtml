@@ -1,0 +1,142 @@
+﻿
+@{
+    ViewBag.Title = "เพิ่มผู้ปกครอง";
+    Layout = "~/Views/Shared/_LayoutStaff.cshtml";
+}
+<head>
+    <link rel="stylesheet" href="~/wwwroot/css/Register.css" />
+</head>
+
+<body>
+    <h1>เพิ่มผู้ปกครอง</h1>
+    
+    <div class="container-reg">
+        <div class="row">
+            <div class="column">
+                <h3>ข้อมูลผู้ปกครอง</h3>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <span class="btn btn-default btn-file">
+                                Browse… <input type="file" id="imgInp" >
+                            </span>
+                        </span>
+                        <input type="text" class="form-control" readonly>
+                    </div>
+                    <img id='img-upload' />
+                </div>
+
+                <label for="id">เลขบัตรประชาชน</label>
+                <input type="text" class="form-control" name="id" id="id" />
+
+                <button type="button" class="btn btn-dark btn-block" onclick="Login">ค้นหา</button>
+
+            </div>
+            <div class="column">
+
+                <label for="prefix">คำนำหน้า</label>
+
+                <select id="prefix" name="prefix" class="select-reg">
+                    <option value="mr">นาย</option>
+                    <option value="mrs">นาง</option>
+                    <option value="miss">นางสาว</option>
+                </select>
+
+                <label for="firstname">ชื่อ</label>
+                <input type="text" class="form-control" name="firstname" id="firstname" />
+
+                <label for="lastname">นามสกุล</label>
+                <input type="text" class="form-control" name="lastname" id="lastname" />
+
+                <label for="phone">เบอร์</label>
+                <input type="text" class="form-control" name="phone" id="phone" />
+
+                <label for="phone2">เบอร์2</label>
+                <input type="text" class="form-control" name="phone2" id="phone2" />
+
+            </div>
+            <div class="column">               
+
+                <label for="address">บ้านเลขที่</label>
+                <input type="text" class="form-control" name="address" id="address" />
+
+                <label for="subdistrict">ตำบล/แขวง</label>
+                <input type="text" class="form-control" name="subdistrict" id="subdistrict" />
+
+                <label for="district">อำเภอ/เขต</label>
+                <input type="text" class="form-control" name="district" id="district" />
+
+                <label for="province">จังหวัด</label>
+                <input type="text" class="form-control" name="province" id="province" />
+
+                <label for="zipcode">รหัสไปรษณีย์</label>
+                <input type="text" class="form-control" name="zipcode" id="zipcode" />
+
+            </div>
+            <div class="column">
+
+                <label for="location">พิกัดบ้าน</label>
+                <input type="text" class="form-control" name="location" id="location" />
+
+                <label for="email">อีเมล</label>
+                <input type="text" class="form-control" name="email" id="email" />
+
+                <label for="round">รอบการใช้บริการ</label>
+                <select id="round" name="round" class="select-reg">
+                    <option value="morning">รอบเช้า</option>
+                    <option value="evening">รอบเย็น</option>
+                    <option value="allday">รอบเช้าและเย็น</option>
+                </select>
+
+                <label for="term">เทอมการใช้บริการ</label>
+                <select id="term" name="term" class="select-reg">
+                    <option value="1term">1 เทอม</option>
+                    <option value="2term">2 เทอม</option>
+                </select>
+
+                <button type="button" class="btn btn-success btn-block" onclick="Login">ยืนยัน</button>
+           
+            </div>
+
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $(document).on('change', '.btn-file :file', function () {
+                var input = $(this),
+                    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+                input.trigger('fileselect', [label]);
+            });
+
+            $('.btn-file :file').on('fileselect', function (event, label) {
+
+                var input = $(this).parents('.input-group').find(':text'),
+                    log = label;
+
+                if (input.length) {
+                    input.val(log);
+                } else {
+                    if (log) alert(log);
+                }
+
+            });
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('#img-upload').attr('src', e.target.result);
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+            $("#imgInp").change(function () {
+                readURL(this);
+            });
+        });
+    </script>
+</body>
+
+
